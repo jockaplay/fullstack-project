@@ -1,12 +1,13 @@
 import './App.css'
 import Card from './components/Card'
+import Login from './components/Login'
 
 function App() {
 
   return (
-    <div>
-      <Card />
-    </div>
+      <Card>
+        <Login />
+      </Card>
   )
 }
 

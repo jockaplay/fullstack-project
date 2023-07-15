@@ -1,81 +1,13 @@
-.card {
-    background-color: azure;
-    color: #202020;
+.container {
+    background-color: #202020;
+    padding: 2rem;
     width: 600px;
-    padding: 1rem;
     border-radius: 5px;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.247);
-}
-
-.card__icon {
-    height: 2rem;
-    width: 2rem;
-}
-
-.card__header {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-}
-
-h2 {
-    width: 100px;
-    font-size: medium;
-    text-align: left;
-}
-
-.card__body {
-    display: flex;
-    gap: 1rem;
-    flex-direction: column;
-    margin: 0 2rem;
-}
-
-.card__row {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-}
-
-.card__submit {
-    height: 3rem;
-    background: linear-gradient(45deg, #4079b9, #5647ad);
-    border-radius: 5px;
-    font-size: medium;
-    color: azure;
-    font-weight: 500;
-    border: none;
-}
-
-.card__link {
-    background: -webkit-linear-gradient(45deg, #4079b9, #5647ad);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-decoration: none;
 }
 
 @media screen and (max-width: 700px) {
-    .card {
-        display: flex;
-        width: 85vw;
-        flex-direction: column;
-    }
-    h2{
-        display: none;
-    }
-    .card__body {
-        gap: 1;
-        margin: 0;
-    }
-}
-
-@media screen and (prefers-color-scheme: dark) {
-    .card {
-        background-color: #202020;
-        color: azure;
+    .container {
+        width: 100%;
+        margin: 1rem;
     }
 }

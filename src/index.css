@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -16,6 +22,16 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  -content: center;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 @media screen and (prefers-color-scheme: dark) {
