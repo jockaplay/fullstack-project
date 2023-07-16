@@ -6,7 +6,7 @@ import Progress from "../../components/Progress";
 import "../Login/login.css"
 import { useState } from "react";
 
-const SingUp = () => {
+const SignUp = () => {
 
     // const [login, setLogin] = useState('');
     const [pass, setPass] = useState('');
@@ -46,7 +46,7 @@ const SingUp = () => {
     );
 }
 
-export default SingUp;
+export default SignUp;
 
 function verifyLogin(value: string){
     const regex = /^(?=.*[a-zA-Z]).{8,}$/;

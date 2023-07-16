@@ -1,5 +1,5 @@
 .container {
-    background-color: #202020;
+    background-color: azure;
     padding: 2rem;
     width: 600px;
     border-radius: 5px;
@@ -9,5 +9,11 @@
     .container {
         width: 100%;
         margin: 1rem;
+    }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    .container {
+        background-color: #202020;
     }
 }
