@@ -8,7 +8,7 @@ import { useState } from "react";
 
 const SingUp = () => {
 
-    const [login, setLogin] = useState('');
+    // const [login, setLogin] = useState('');
     const [pass, setPass] = useState('');
 
     return (
