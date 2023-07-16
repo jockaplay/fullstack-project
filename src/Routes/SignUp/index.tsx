@@ -37,7 +37,7 @@ const SignUp = () => {
                 <section className="card__row">
                     <h2>Confirm</h2><Inputs onChange={(value) => confirmPass(value.target.value, pass)} pass={true} placeholder="Password"/>
                 </section>
-                <Button name="Sing Up" />
+                <Button name="Sign Up" />
                 <section className="card__links__row -center">
                 <a className="card__link" href="#">Back</a>
                 </section>
