@@ -1,13 +1,14 @@
+import React from "react";
 import "./inputs.css";
 
-type Iprops = {
-    pass: boolean,
-    placeholder: string
+interface InputProps {
+    placeholder: string;
+    pass: boolean;
 }
 
-const Inputs = (props: Iprops) => {
+const Inputs: React.FC<InputProps> = ({placeholder, pass, ...props}) => {
     return (
-        <input placeholder={props.placeholder} type={props.pass ? "password" : "text"}/>
+        <input placeholder={placeholder} type={pass ? "password" : "text"}/>
     );
 }
 

@@ -1,8 +1,8 @@
-import Inputs from "../Inputs";
+import Inputs from "../../components/Inputs";
 import { BsPersonFill } from "react-icons/bs"
 import "./login.css"
 import { IconContext } from "react-icons";
-import Button from "../Botton";
+import Button from "../../components/Botton";
 
 const Login = () => {
     return (

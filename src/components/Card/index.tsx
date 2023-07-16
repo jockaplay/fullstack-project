@@ -7,7 +7,9 @@ type Iprops = {
 
 const Card = (props: Iprops) => {
     return (
-        <div className="container">{props.children}</div>
+        <div className="container">
+            {props.children}
+        </div>
     );
 }
 
