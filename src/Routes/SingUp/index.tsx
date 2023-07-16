@@ -19,20 +19,23 @@ const SingUp = () => {
                 <h1>Create account</h1>
             </div>
             <form className="card__body">
-                <section className="card__row">
-                    <h2>Name</h2><Inputs pass={false} placeholder="Name"/>
+                <section id="create_login" className="card__warning">
+                    <p>8 characters</p>
                 </section>
                 <section className="card__row">
-                    <h2>Password</h2><Inputs pass={true} placeholder="Password"/>
+                    <h2>Name</h2><Inputs pass={false} onChange={(value) => {verifyLogin(value.target.value)}} placeholder="Name"/>
                 </section>
-                <section className="card__warning">
-                    <p>Your password must contains: 8 characters and numbers</p>
+                <section id="create_pass" className="card__warning">
+                    <p>8 characters and numbers</p>
                 </section>
                 <section className="card__row">
-                    <h2>Confirm</h2><Inputs pass={true} placeholder="Password"/>
+                    <h2>Password</h2><Inputs onChange={(value) => {verifyPass(value.target.value); setPass(value.target.value)}} pass={true} placeholder="Password"/>
                 </section>
-                <section className="card__warning">
+                <section id="create_pass_confirm" className="card__warning">
                     <p>Passwords not match</p>
+                </section>
+                <section className="card__row">
+                    <h2>Confirm</h2><Inputs onChange={(value) => confirmPass(value.target.value, pass)} pass={true} placeholder="Password"/>
                 </section>
                 <Button name="Sing Up" />
                 <section className="card__links__row -center">
@@ -46,10 +49,34 @@ const SingUp = () => {
 export default SingUp;
 
 function verifyLogin(value: string){
-    const regex = /^(?=.*[a-zA-Z])(?=.*d).{8,}$/
-    if (regex.test(value)){
-        console.log("Match");
+    const regex = /^(?=.*[a-zA-Z]).{8,}$/;
+    const login = document.getElementById("create_login");
+    verify(value, login, regex);
+}
+
+function verifyPass(value: string){
+    const regex = /^(?=.*[a-zA-Z])(?=.*\d).{8,}$/;
+    const pass = document.getElementById("create_pass");
+    verify(value, pass, regex);
+}
+
+function confirmPass(value: string, pass: string){
+    const pass2 = document.getElementById("create_pass_confirm");
+    if (value.length < 1) {
+        pass2?.classList.remove("--show");
+    } else if (value == pass){
+        pass2?.classList.remove("--show");
     } else {
-        console.log(value);
+        pass2?.classList.add("--show");
+    }
+}
+
+function verify(value:string, campo:HTMLElement | null, regra:RegExp) {
+    if (value.length < 1) {
+        campo?.classList.remove("--show");
+    } else if (regra.test(value)){
+        campo?.classList.remove("--show");
+    } else {
+        campo?.classList.add("--show");
     }
 }

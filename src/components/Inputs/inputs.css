@@ -6,6 +6,7 @@ input {
     border: none;
     background-color: #dddfe6;
     padding-left: 1rem;
+    padding-right: 1rem;
     font-size: medium;
     outline: none;
     border-bottom: 2px solid transparent;
