@@ -1,6 +1,6 @@
 import './App.css'
 import Card from './components/Card'
-import Login from './Routes/Login'
+// import Login from './Routes/Login'
 import SingUp from './Routes/SingUp'
 
 function App() {
