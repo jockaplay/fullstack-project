@@ -1,12 +1,13 @@
 import './App.css'
 import Card from './components/Card'
-import Login from './components/Login'
+import Login from './Routes/Login'
+import SingUp from './Routes/SingUp'
 
 function App() {
 
   return (
       <Card>
-        <Login />
+        <SingUp/>
       </Card>
   )
 }
