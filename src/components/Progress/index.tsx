@@ -7,7 +7,7 @@ const Progress = () => {
                 <div className="progress__circle checked">
                     <span className="progress__label"><b>1</b></span>
                 </div>
-                <div className="progress__circle checked">
+                <div className="progress__circle">
                     <span className="progress__label"><b>2</b></span>
                 </div>
                 <div className="progress__circle">

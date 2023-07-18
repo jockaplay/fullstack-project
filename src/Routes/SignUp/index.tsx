@@ -5,6 +5,7 @@ import Button from "../../components/Botton";
 import Progress from "../../components/Progress";
 import "../Login/login.css"
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
 
@@ -39,7 +40,7 @@ const SignUp = () => {
                 </section>
                 <Button name="Sign Up" />
                 <section className="card__links__row -center">
-                <a className="card__link" href="#">Back</a>
+                <Link className="card__link" to="/">Back</Link>
                 </section>
             </form>
         </div>

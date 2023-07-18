@@ -3,6 +3,7 @@ import { BsPersonFill } from "react-icons/bs"
 import "./login.css"
 import { IconContext } from "react-icons";
 import Button from "../../components/Botton";
+import { Link } from "react-router-dom";
 
 const Login = () => {
     return (
@@ -20,7 +21,7 @@ const Login = () => {
                 </section>
                 <Button name="Login" />
                 <section className="card__links__row">
-                <a className="card__link" href="#">Forgot my password</a><a className="card__link" href="#">Create account</a>
+                <Link className="card__link" to="/">Forgot my password</Link><Link className="card__link" to="/new-account">Create account</Link>
                 </section>
             </form>
         </div>
