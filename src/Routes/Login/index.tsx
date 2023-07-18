@@ -21,7 +21,7 @@ const Login = () => {
                 </section>
                 <Button name="Login" />
                 <section className="card__links__row">
-                <Link className="card__link" to="/">Forgot my password</Link><Link className="card__link" to="/new-account">Create account</Link>
+                <Link className="card__link" to="/recovey">Forgot my password</Link><Link className="card__link" to="/new-account">Create account</Link>
                 </section>
             </form>
         </div>
