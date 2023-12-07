@@ -1,9 +1,9 @@
-import './App.css'
-import Card from './components/Card'
-import Login from './Routes/Login'
-import Recovery from './Routes/Recovey'
-import SignUp from './Routes/SignUp'
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import './App.css';
+import Card from './components/Card';
+import Login from './Routes/Login';
+import Recovery from './Routes/Recovey';
+import SignUp from './Routes/SignUp';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
 
