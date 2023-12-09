@@ -32,8 +32,10 @@ app.post('/auth/register', async(req, res) => {
         return res.status(422).json({msg: "Email is required."})
     }
 
-    const userExists = await User.findOne({ email: email})
+    const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!regexEmail.test(email)) { return res.status(422).json({msg: "Email invalid."}) }
 
+    const userExists = await User.findOne({ email: email})
     if (userExists) { return res.status(422).json({msg: "This Email already be registered."}) }
 
     const cryptedPass = await Crypter(pass)
@@ -41,15 +43,36 @@ app.post('/auth/register', async(req, res) => {
     const user = new User({
         name,
         email,
-        passowrd: cryptedPass,
+        password: cryptedPass,
     })
 
     try {
         await user.save()
-        return res.status(200).json({msg: "User registred as successfuly."})
+        return res.status(200).json({msg: "User registred as successfully."})
     } catch(err) {
         return res.status(500).json({m: "Server Error."})
     }
+})
+
+app.post('/auth/login', async (req, res) => {
+    const {email, pass} = req.body
+
+    if (!email) {
+        return res.status(422).json({msg: "Email is required."})
+    }
+    if (!pass) {
+        return res.status(422).json({msg: "Password is required."})
+    }
+
+    const user = await User.findOne({ email: email})
+    if (!user) { return res.status(404).json({msg: "User not found."}) }
+
+    const cryptedPass = await Crypter(pass)
+    if (cryptedPass != user.password){
+        return res.status(422).json({msg: "Incorrect password."})
+    }
+
+    return res.status(200).json({msg: "Successfull."})
 })
 
 mongoose.connect(`mongodb+srv://${dbUser}:${dbPass}@cluster0.8xjfylx.mongodb.net/?retryWrites=true&w=majority`).then(()=>{
