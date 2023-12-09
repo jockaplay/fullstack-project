@@ -3,12 +3,14 @@ const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const express = require('express');
+const cors = require("cors");
 
 const User = require('./models/User');
 const Crypter = require('./assets/Crypter');
 
 const app = express();
 app.use(express.json())
+app.use(cors())
 const PORT = 3030;
 const dbUser = process.env.DB_USER
 const dbPass = process.env.DB_PASS
